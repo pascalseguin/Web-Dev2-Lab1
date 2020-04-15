@@ -1,0 +1,137 @@
+:root {
+    --top: #0b245b;
+    --side: #0253b3;
+    --back: #faf8ef;
+    --boxes: #93c9fa;
+    --text: #174240;    
+  }
+  html {
+    /* Makes our life easier ... now width property is actual width */
+    box-sizing: border-box;
+    font-family: 'Open Sans', "Segoe UI", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
+  
+    color: var(--text);
+  }
+  
+  /*
+    Best practice for making everything use our default box-sizing (but still allows for overriding)
+    https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+  */
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+  
+  body {
+    margin: 0;
+    background-color: var(--back);
+    min-height: calc(100vh - 100px);
+    letter-spacing: -1px;
+    width: 100%;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0 0 5px 0;
+  }
+
+  h2 {
+    font-weight: 300;
+  }
+  h4 {
+      font-weight: 600;
+      margin-top: 0.5em;
+  }
+
+.container {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-rows: 100px auto;
+    grid-gap: 10px;
+
+}
+
+.matrix {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: auto auto;
+    grid-gap:  10px;
+    background-color: white;
+}
+/*---------------------------------------------------*/
+
+header, footer {
+
+  color: var(--back);
+}
+header {
+  background-color: var(--top);
+    grid-area: 1 / 1 / span 1/ span 5;
+    display: flex;
+    justify-content: space-between;
+}
+header div img {
+    width: 10%;
+    opacity: 0.25;
+    margin: 0.25em;
+    float: right;
+}
+
+/*---------------------------------------------------*/
+
+aside {
+  background-color: var(--side);  
+  color: #e6ded3;
+
+}
+aside img {
+    width: 25%;
+    opacity: 0.35;
+    grid-area: 2 / 1 / span 1 / span 1;
+    text-align: center;
+}
+
+
+/*---------------------------------------------------*/
+
+main {
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    grid-auto-columns: auto auto auto auto auto;
+    grid-gap: 10px;
+    text-align: center;
+
+}
+
+
+.GridTop {background-color: #93c9fa}
+
+footer {
+grid-area: 4 / 1 / span 1/ span 6;
+  background-color: var(--top);
+  color: var(--back);
+
+}
+
+#DNVAL h3, #performers h3, #TBVO h3, #Ggraph h3, #EGgraph h3{
+  border-bottom: 2px solid #faf8ef;
+}
+
+
+#inner1 {grid-area: 1 / 1 / span 1/ span 1;   min-width: 150px;}
+#inner2 {grid-area: 1 / 2 / span 1/ span 1;  min-width: 150px;}
+#inner3 {grid-area: 1 / 3 / span 1/ span 1;   min-width: 150px;}
+#inner4 {grid-area: 1 / 4 / span 1/ span 1;   min-width: 150px;}
+#inner5 {grid-area: 1 / 5 / span 1/ span 1;   min-width: 150px;}
+#inner6 {grid-area: 1 / 6 / span 1/ span 1;   min-width: 150px;}
+
+#DNVAL{grid-area: 2 / 1 / span 1/ span 2;background-color: white;}
+#performers{grid-area: 2 / 3 / span 1/ span 2;background-color: white;}
+#TBVO{grid-area: 2 / 5 / span 1/ span 2;background-color: white;}
+#Ggraph{grid-area: 3 / 1 / span 1/ span 2;}
+#EGgraph{grid-area: 3 / 3 / span 1/ span 4;}
